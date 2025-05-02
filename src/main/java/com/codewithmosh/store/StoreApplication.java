@@ -1,5 +1,6 @@
 package com.codewithmosh.store;
 
+import com.codewithmosh.store.entities.User;
 import com.codewithmosh.store.services.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,15 @@ public class StoreApplication {
         ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
         var service =  context.getBean(UserService.class);
         service.fetchPaginatedProducts(0, 10);
+        User.builder()
+                .name("John Doe")
+                .email("john.doe@example.com" )
+                .password("password")
+                .build();
+//        var user = new User();
+//        user.setName("John Doe");
+//        user.setEmail("john.doe@example.com");
+//        user.setPassword("password123");
 
     }
 }
