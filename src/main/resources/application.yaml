@@ -5,5 +5,8 @@ spring:
     url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
     username: root
     password: MySqlR00t
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: ""
   jpa:
     show-sql: true
