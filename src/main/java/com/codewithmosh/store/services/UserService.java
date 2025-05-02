@@ -131,14 +131,14 @@ public class UserService {
         productRepository.findAll(spec).forEach(System.out::println);
     }
 
-    @Transactional
-    public void fetchUsers() {
-        var users = userRepository.findAllWithTags();
-        users.forEach(u -> {
-            System.out.println(u);
-            u.getAddresses().forEach(System.out::println);
-        });
-    }
+//    @Transactional
+//    public void fetchUsers() {
+//        var users = userRepository.findAllWithTags();
+//        users.forEach(u -> {
+//            System.out.println(u);
+//            u.getAddresses().forEach(System.out::println);
+//        });
+//    }
 
     public void fetchSortedProducts() {
         var sort = Sort.by("name").and(
@@ -161,9 +161,9 @@ public class UserService {
         System.out.println("Total Elements: " + totalElements);
     }
 
-    @Transactional
-    public void printLoyalProfiles() {
-        var users = userRepository.findLoyalUsers(2);
-        users.forEach(p -> System.out.println(p.getId() + ": " + p.getEmail()));
-    }
+//    @Transactional
+//    public void printLoyalProfiles() {
+//        var users = userRepository.findLoyalUsers(2);
+//        users.forEach(p -> System.out.println(p.getId() + ": " + p.getEmail()));
+//    }
 }
