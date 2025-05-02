@@ -4,6 +4,8 @@ import com.codewithmosh.store.entities.User;
 import com.codewithmosh.store.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,13 +27,6 @@ public class UserController {
 
     @GetMapping("")
     public Iterable<User> getAllUsers() {
-        // This is a mock implementation. In a real application, you would fetch users from the database.
-//        return List.of(
-//                new User("Carl", "Peters"),
-//                new User("John", "Doe"),
-//                new User("Jane", "Smith")
-//        );
-
         return userRepository.findAll();
     }
 
@@ -39,12 +34,17 @@ public class UserController {
     public Long getUserCount() {
         return userRepository.count();
     }
+
     @GetMapping("/first")
     public User getFirstUser() {
         return userRepository.findAll().iterator().next();
     }
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
-        return userRepository.findById(id).orElse(null);
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
+        var user = userRepository.findById(id).orElse(null);
+        if (user == null) {
+            return  ResponseEntity.notFound().build();
+        }
+        return  ResponseEntity.ok(user);
     }
 }
