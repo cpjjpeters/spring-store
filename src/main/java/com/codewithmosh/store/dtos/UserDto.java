@@ -21,7 +21,7 @@ public class UserDto {
     private Long id;
     private String name;
     private String email;
-//    @JsonInclude(JsonInclude.Include.NON_NULL)
-//    private String phone;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String phone;
     private LocalDateTime createdAt;
 }
