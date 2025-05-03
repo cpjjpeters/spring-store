@@ -3,6 +3,7 @@ package com.codewithmosh.store.entities;
 import com.codewithmosh.store.dtos.ProductSummary;
 import com.codewithmosh.store.dtos.ProductSummaryDTO;
 import com.codewithmosh.store.repositories.ProductCriteriaRepository;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -23,6 +24,8 @@ public interface ProductRepository extends JpaRepository<Product, Long>, Product
   List<Product> findByNameStartingWith(String name);
   List<Product> findByNameEndingWith(String name);
   List<Product> findByNameEndingWithIgnoreCase(String name);
+  @EntityGraph(attributePaths = {"category"})
+  List<Product> findBycategoryId(Byte categoryId);
 
   // Numbers
   List<Product> findByPrice(BigDecimal price);
@@ -31,6 +34,9 @@ public interface ProductRepository extends JpaRepository<Product, Long>, Product
   List<Product> findByPriceLessThanEqual(BigDecimal price);
   List<Product> findByPriceBetween(BigDecimal min, BigDecimal max);
 
+  @EntityGraph(attributePaths = {"category"})
+  @Query("select p from Product p  ")
+  List<Product> findAllWithCategory();
   // Null
   List<Product> findByDescriptionNull();
   List<Product> findByDescriptionNotNull();
