@@ -10,3 +10,7 @@ spring:
     suffix: ""
   jpa:
     show-sql: true
+management:
+  tracing:
+    sampling:
+      probability: 1
