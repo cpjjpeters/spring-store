@@ -1,6 +1,7 @@
 package com.codewithmosh.store.controllers;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 //    private static final Log logger = LogFactory.getLog(MyApplication.class);
 
+    @Value("${spring.application.name}")
+    private String appName;
 
     @RequestMapping("/")
     public String home() {
-        log.info("home() has been called");
+        log.info("home() has been called ->{} is printed", appName);
         return "index.html";
     }
 
