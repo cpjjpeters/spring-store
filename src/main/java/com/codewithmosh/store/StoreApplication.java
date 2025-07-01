@@ -16,8 +16,8 @@ public class StoreApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
-        var manager = context.getBean( NotificationManager.class);
-        manager.sendNotification("Hello", "John Doe");
+//        var manager = context.getBean( NotificationManager.class);
+//        manager.sendNotification("Hello", "John Doe");
 
 //        var service =  context.getBean(UserService.class);
 //        service.fetchPaginatedProducts(0, 10);
@@ -31,7 +31,7 @@ public class StoreApplication {
 //        user.setEmail("john.doe@example.com");
 //        user.setPassword("password123");
 
-        var orderService = new OrderService(new PayPalPaymentService());
+        var orderService = context.getBean(OrderService.class);
         orderService.placeOrder();
 
     }

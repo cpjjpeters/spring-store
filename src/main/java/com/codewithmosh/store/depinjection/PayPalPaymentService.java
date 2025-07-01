@@ -1,6 +1,9 @@
 package com.codewithmosh.store.depinjection;
 
+import org.springframework.stereotype.Component;
+
 /* carlpeters created on 26/06/2025 inside the package - com.codewithmosh.store.depinjection */
+@Component
 public class PayPalPaymentService implements PaymentService {
     @Override
     public void processPayment(double amount) {
