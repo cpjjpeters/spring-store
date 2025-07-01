@@ -1,5 +1,7 @@
 package com.codewithmosh.store;
 
+import com.codewithmosh.store.depinjection.OrderService;
+import com.codewithmosh.store.depinjection.PayPalPaymentService;
 import com.codewithmosh.store.entities.User;
 import com.codewithmosh.store.services.NotificationManager;
 import com.codewithmosh.store.services.UserService;
@@ -28,6 +30,9 @@ public class StoreApplication {
 //        user.setName("John Doe");
 //        user.setEmail("john.doe@example.com");
 //        user.setPassword("password123");
+
+        var orderService = new OrderService(new PayPalPaymentService());
+        orderService.placeOrder();
 
     }
 }
