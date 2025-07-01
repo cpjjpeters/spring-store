@@ -1,6 +1,10 @@
 package com.codewithmosh.store.depinjection;
 
-/* carlpeters created on 26/06/2025 inside the package - com.codewithmosh.store.depinjection */
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+
+@Service("stripe")
+@Primary
 public class StripePaymentService implements PaymentService {
     @Override
     public void processPayment(double amount) {
