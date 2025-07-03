@@ -4,7 +4,7 @@ package com.codewithmosh.store.services;
 
 public class SMSNotificationService implements NotificationService {
     @Override
-    public void sendNotification(String message, String recipient) {
-        System.out.println("Sending SMS notification... " + " " + message +" " + recipient);
+    public void sendNotification(String message, String recipientEmail) {
+        System.out.println("Sending SMS notification... " + " " + message +" " + recipientEmail);
     }
 }

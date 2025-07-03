@@ -23,6 +23,10 @@ stripe:
   supported-currencies: USD,EUR,GBP,JPY
 #payment-gateway: stripe
 
+mail:
+    host: smtp.mailtrap.io
+    port: 2525
+
 
 
 # application.yaml takes over from application.properties or in this case application-local.yaml
