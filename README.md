@@ -1,3 +1,6 @@
+
+Configuring using a configfile with @Configuration and here define @Bean
+
 # The Ultimate Spring Boot Course
 
 This repository contains the source code for my Spring Boot course: 

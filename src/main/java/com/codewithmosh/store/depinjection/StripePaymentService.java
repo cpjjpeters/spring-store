@@ -7,8 +7,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Service("stripe")
-@Primary
+//@Service("stripe")
+//@Primary
 public class StripePaymentService implements PaymentService {
 
     @Value("${stripe.apiUrl}")
