@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8089
 spring:
   application:
     name: store
@@ -16,3 +16,10 @@ management:
   tracing:
     sampling:
       probability: 1
+stripe:
+  apiUrl: https://api.stripe.com
+  enabled: true
+  timeout: 5000
+  supported-currencies: USD,EUR,GBP,JPY
+# application.yaml takes over from application.properties or in this case application-local.yaml
+# if there is an error (formatting or otherwise) in any configfile, the application will not start

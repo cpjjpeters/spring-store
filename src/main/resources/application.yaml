@@ -1,3 +1,4 @@
+# application-local.yaml takes over from application.properties for the port, but not for the rest
 server:
   port: 8088
 spring:
@@ -16,3 +17,8 @@ management:
   tracing:
     sampling:
       probability: 1
+stripe:
+  apiUrl: https://api.stripe.com
+  enabled: true
+  timeout: 5000
+  supported-currencies: USD,EUR,GBP
