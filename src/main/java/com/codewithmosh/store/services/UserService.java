@@ -9,17 +9,8 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 @Service
 public class UserService {
-    private final UserRepository userRepository;
-    private final NotificationService notificationService;
 
 
-    public void registerUser(User user) {
-        if(userRepository.findByEmail(user.getEmail()) != null) {
-            throw new IllegalArgumentException("User with this email already exists.");
-        }
-        userRepository.save(user);
-        notificationService.sendNotification("Welcome to our store!", user.getName());
-    }
 
 
 //    private final UserRepository userRepository;
