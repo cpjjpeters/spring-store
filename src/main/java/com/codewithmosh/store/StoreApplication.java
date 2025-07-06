@@ -1,6 +1,7 @@
 package com.codewithmosh.store;
 
 import com.codewithmosh.store.entities.Address;
+import com.codewithmosh.store.entities.Tag;
 import com.codewithmosh.store.entities.User;
 import com.codewithmosh.store.services.UserService;
 import org.springframework.boot.SpringApplication;
@@ -19,14 +20,16 @@ var user = User.builder()
                 .password("password")
                 .build();
 
-var address = Address.builder()
-                .street("123 Main St")
-                .city("Springfield")
-                .zip("12345")
-                .state("IL")
-                .build();
+user.addTag("Tag_one");
 
-user.addAddress(address);
+
+//var address = Address.builder()
+//                .street("123 Main St")
+//                .city("Springfield")
+//                .zip("12345")
+//                .state("IL")
+//                .build();
+
         System.out.println(user);
     }
 }
