@@ -31,6 +31,6 @@ public class Address {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    @ToString.Exclude
-    private UserEntity user;
+    @ToString.Exclude  // Prevents infinite recursion in toString !!
+    private User user;
 }

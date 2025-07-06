@@ -1,7 +1,6 @@
 package com.codewithmosh.store.repositories;
 
 import com.codewithmosh.store.entities.User;
-import com.codewithmosh.store.entities.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository {  //extends JpaRepository<UserEntity, Long> {
