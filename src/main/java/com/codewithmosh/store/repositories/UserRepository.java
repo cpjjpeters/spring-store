@@ -3,8 +3,7 @@ package com.codewithmosh.store.repositories;
 import com.codewithmosh.store.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository {  //extends JpaRepository<UserEntity, Long> {
-    void save (User user);
+public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email);
 
 //    @EntityGraph(attributePaths = {"tags", "addresses"})

@@ -68,14 +68,6 @@ public class User {
       tag.getUsers().add(this);
     }
 
-
-//    @ManyToMany
-//    @JoinTable(
-//            name = "user_tags",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "tag_id")
-//    )
-
     @Builder.Default
     @ManyToMany
     @JoinTable(
