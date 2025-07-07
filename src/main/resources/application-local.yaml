@@ -16,16 +16,7 @@ management:
   tracing:
     sampling:
       probability: 1
-stripe:
-  apiUrl: https://api.stripe.com
-  enabled: true
-  timeout: 5000
-  supported-currencies: USD,EUR,GBP,JPY
-#payment-gateway: stripe
 
-mail:
-    host: smtp.mailtrap.io
-    port: 2525
 
 
 

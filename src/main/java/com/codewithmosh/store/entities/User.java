@@ -86,21 +86,21 @@ public class User {
      Set<Tag> tags = new HashSet<>();
 
 
-//
-//    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
-//    private Profile profile;
-//
-//    @ManyToMany
-//    @JoinTable(
-//            name = "wishlist",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "product_id")
-//    )
-//    private Set<Product> favoriteProducts = new HashSet<>();
-//
-//    public void addFavoriteProduct(Product product) {
-//        favoriteProducts.add(product);
-//    }
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private Profile profile;
+
+    @ManyToMany
+    @JoinTable(
+            name = "wishlist",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private Set<Product> favoriteProducts = new HashSet<>();
+
+    public void addFavoriteProduct(Product product) {
+        favoriteProducts.add(product);
+    }
 
 //    @Override
 //    public String toString() {
